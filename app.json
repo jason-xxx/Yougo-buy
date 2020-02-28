@@ -29,13 +29,13 @@
       "selectedIconPath": "images/icon_category_active@3x.png"
     },
     {
-      "pagePath": "pages/category/index",
+      "pagePath": "pages/cart/index",
       "text": "购物车",
       "iconPath": "images/icon_cart@3x.png",
       "selectedIconPath": "images/icon_cart_active@3x.png"
     },
     {
-      "pagePath": "pages/category/index",
+      "pagePath": "pages/personal/index",
       "text": "我的",
       "iconPath": "images/icon_me@3x.png",
       "selectedIconPath": "images/icon_me_active@3x.png"
