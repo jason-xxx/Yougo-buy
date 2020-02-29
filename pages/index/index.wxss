@@ -27,3 +27,16 @@
   height: 340rpx;
   width: 750rpx;
 }
+
+
+/* 菜单导航图标样式 */
+.menus{
+  display: flex;
+  padding: 25rpx;
+  justify-content: space-around;
+  align-items: center;
+}
+.menus image{
+  width: 128rpx;
+  height: 140rpx;
+}

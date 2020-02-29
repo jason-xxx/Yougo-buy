@@ -29,3 +29,12 @@
     </swiper-item>
   </block>
 </swiper>
+
+<!-- 导航菜单 -->
+<view class="menus">
+  <block wx:for="{{menus}}" wx:key="index">
+    <navigator url="">
+      <image src="{{item.image_src}}" mode="aspectFill"></image>
+    </navigator>
+  </block>
+</view>
