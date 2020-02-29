@@ -84,3 +84,30 @@
 .floor + .floor .floor-right image:nth-child(3n + 1){
     width: 272rpx;
 }
+
+/* 返回顶部按钮样式 */
+.toTop{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 2, .7);
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  right: 20rpx;
+  bottom: 50rpx;
+}
+
+.jiantou{
+  width: 10px;
+  height: 10px;
+  border-left: 1px #fff solid;
+  border-top: 1px #fff solid;
+  transform:rotate(45deg);
+  position: relative;
+  top:8rpx;
+}

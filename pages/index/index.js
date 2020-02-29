@@ -10,7 +10,10 @@ data:{
    menus:[],
 
    //楼层数据
-   floors:[]
+   floors:[],
+
+   // 是否显示回到顶部
+   isShowTop: false
 },
 onLoad(){
   //请求轮播图接口--------------------
@@ -51,12 +54,40 @@ onLoad(){
   request({
     url:'/home/floordata'
   }).then(res=>{
-    console.log(res)
+    // console.log(res)
     const {message}=res.data
     this.setData({
       floors:message
     })
   })
 
-}
+},
+//小程序回到顶部方法---------------------------
+handleToTop(){
+  wx.pageScrollTo({
+    scrollTop: 0,
+    duration:300
+  })
+},
+
+  // 监听页面的滚动事件------------------------
+  onPageScroll(e) {
+    const { scrollTop } = e;
+    // 当前的状态
+    let isShow = this.data.isShowTop;
+
+    // 判断如果滚动高度大于300，显示回到顶部的按钮
+    if (scrollTop > 300) {
+      isShow = true
+    } else {
+      isShow = false
+    }
+    
+    // 避免频繁的操作setData，所以如果下面两个值是相同就没必要再赋值了
+    if (isShow == this.data.isShowTop) return;
+    // console.log("测试是否频繁操作")
+    this.setData({
+      isShowTop: isShow
+    })
+  }
 })

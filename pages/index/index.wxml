@@ -63,7 +63,11 @@
       </block>
       </view>
    </view>
+ </view>
 
-
+ <!-- 回到顶部块------------------- -->
+ <view class="toTop" bindtap="handleToTop" wx:if="{{isShowTop}}">
+   <view class="jiantou"></view>
+   <text>顶部</text>
  </view>
 </view>
