@@ -1,2 +1,37 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="category">
+<!-- 搜索组件 -->
+  <search/>
+
+<!-- 内容部分 -->
+  <view class="content">
+    <!-- 左侧分类栏 -->
+    <view class="left">
+    <!-- 菜单子选项 -->
+      <block wx:for="{{50}}" wx:key="index">
+        <view class="menu-item">
+            喵喵喵
+        </view>
+      </block>
+    </view>
+  
+    <!-- 右侧详情栏 -->
+    <view class="right">
+    <!-- 子分类 -->
+      <view class="right-list"> 
+         <!-- 分类名称 -->
+        <view class="right-title">
+         电视总类
+        </view>
+         <!-- 品牌列表 -->
+        <view class="product-list">
+        <block wx:for="{{50}}" wx:key="index">
+          <navigator url="">
+            <image src="https://wx3.sinaimg.cn/mw690/6ff374a1gy1gcdgqul6tej20u00u0who.jpg"
+            mode="aspectFill"></image>
+          </navigator>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
