@@ -33,7 +33,7 @@
 <!-- 导航菜单 -->
 <view class="menus">
   <block wx:for="{{menus}}" wx:key="index">
-    <navigator url="">
+    <navigator url="{{item.url}}" open-type="{{item.open_type}}">
       <image src="{{item.image_src}}" mode="aspectFill"></image>
     </navigator>
   </block>

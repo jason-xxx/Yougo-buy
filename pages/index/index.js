@@ -26,11 +26,21 @@ onLoad(){
   request({
     url: '/home/catitems',
   }).then(res=>{
-    console.log(res)
+    // console.log(res)
     //在res.data解构message菜单栏数组
     const{message}=res.data;
+    
+    //将数组进行改造，通过map方法返回一个新数组
+    const newData=message.map((value,index)=>{
+    //给索引为0的值添加url，即给分类图标添加url
+        if(index===0){
+          value.url="/pages/category/index"
+        }
+        //否则return
+      return value;
+    })
     this.setData({
-      menus:message
+      menus: newData
     })
   })
 }
