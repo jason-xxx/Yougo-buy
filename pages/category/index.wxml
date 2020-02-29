@@ -8,7 +8,9 @@
     <view class="left">
     <!-- 菜单子选项 -->
       <block wx:for="{{50}}" wx:key="index">
-        <view class="menu-item">
+        <view class="menu-item {{suoyin === index? 'click' : ''}}" 
+        bindtap="handleClick" 
+        data-index="{{index}}">
             喵喵喵
         </view>
       </block>
