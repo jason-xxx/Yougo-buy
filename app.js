@@ -1,3 +1,4 @@
+//导入request
 import request from "./utils/request.js";
 
 //app.js

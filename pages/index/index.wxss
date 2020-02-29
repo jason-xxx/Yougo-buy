@@ -17,3 +17,13 @@
   .search-input icon{
     margin-right: 5px;
   }
+
+/* 轮播图样式 */
+.swiper{
+  height: 340rpx;
+}
+
+.swiper image{
+  height: 340rpx;
+  width: 750rpx;
+}
