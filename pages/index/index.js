@@ -7,7 +7,10 @@ data:{
    banners:[],
 
    //菜单图标数据
-   menus:[]
+   menus:[],
+
+   //楼层数据
+   floors:[]
 },
 onLoad(){
   //请求轮播图接口--------------------
@@ -43,5 +46,17 @@ onLoad(){
       menus: newData
     })
   })
+  
+  //请求楼层图片接口--------------------------
+  request({
+    url:'/home/floordata'
+  }).then(res=>{
+    console.log(res)
+    const {message}=res.data
+    this.setData({
+      floors:message
+    })
+  })
+
 }
 })

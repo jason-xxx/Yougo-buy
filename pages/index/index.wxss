@@ -76,3 +76,11 @@
   width: 233rpx;
 
 }
+/* +表示兄弟选择器的意思，2、3楼层图片样式 */
+.floor + .floor .floor-right image{
+    width: 193rpx;
+}
+
+.floor + .floor .floor-right image:nth-child(3n + 1){
+    width: 272rpx;
+}
