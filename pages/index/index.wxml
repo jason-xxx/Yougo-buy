@@ -1,4 +1,6 @@
 <!--index.wxml-->
+
+<!-- 搜索 ------------------->
 <view class="container">
  <navigator url="">
  <view class="search">
@@ -9,9 +11,9 @@
  </view>
  </view>
  </navigator>
-</view>
 
-<!-- 轮播图 -->
+
+<!-- 轮播图 ------------------->
 
 <swiper 
   class="swiper "
@@ -30,11 +32,38 @@
   </block>
 </swiper>
 
-<!-- 导航菜单 -->
+<!-- 导航菜单 ------------------>
 <view class="menus">
   <block wx:for="{{menus}}" wx:key="index">
     <navigator url="{{item.url}}" open-type="{{item.open_type}}">
       <image src="{{item.image_src}}" mode="aspectFill"></image>
     </navigator>
   </block>
+</view>
+
+<!-- 楼层布局------------------>
+ <view class="floor">
+  <!-- 头部 -->
+   <image 
+   class="floor-top"
+   src="https://api-hmugo-web.itheima.net/pyg/pic_floor01_title.png"
+   mode="aspectFill"></image>
+   <!--主要内容-->
+   <view class="floor-content">
+     <!-- 左侧 -->
+     <view class="floor-left">
+       <image src="https://api-hmugo-web.itheima.net/pyg/pic_floor01_1@2x.png" mode="aspectFill"> 
+       </image>
+     </view>
+     <!-- 右侧 -->
+     <view class="floor-right">
+       <image src="https://api-hmugo-web.itheima.net/pyg/pic_floor01_2@2x.png" mode="aspectFill"></image> 
+       <image src="https://api-hmugo-web.itheima.net/pyg/pic_floor01_3@2x.png" mode="aspectFill"></image>
+       <image src="https://api-hmugo-web.itheima.net/pyg/pic_floor01_3@2x.png" mode="aspectFill"></image>
+       <image src="https://api-hmugo-web.itheima.net/pyg/pic_floor01_2@2x.png" mode="aspectFill"></image>
+     </view>
+   </view>
+
+
+ </view>
 </view>

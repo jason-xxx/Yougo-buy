@@ -1,4 +1,6 @@
 /**index.wxss**/
+
+/* 搜索样式 */
 .search{
   background:#002;
   padding: 20rpx;
@@ -39,4 +41,38 @@
 .menus image{
   width: 128rpx;
   height: 140rpx;
+}
+
+
+/* 楼层样式 */
+.floor{
+  margin-bottom: 20px;
+}
+.floor-top{
+  width:  750rpx;
+  height: 60rpx;
+}
+.floor-content{
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx;
+}
+
+.floor-left{
+  margin-right: 12rpx;
+}
+.floor-left image{
+  width: 232rpx;
+  height: 386rpx;
+}
+.floor-right{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.floor-right image{
+  height: 188rpx;
+  width: 233rpx;
+
 }

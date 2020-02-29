@@ -10,7 +10,7 @@ data:{
    menus:[]
 },
 onLoad(){
-  //请求轮播图接口
+  //请求轮播图接口--------------------
   request({
     url:"/home/swiperdata"
   }).then(res=>{
@@ -22,7 +22,7 @@ onLoad(){
     })
   }),
 
-  //请求菜单图标接口
+  //请求菜单图标接口--------------------
   request({
     url: '/home/catitems',
   }).then(res=>{
