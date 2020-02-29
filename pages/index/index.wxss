@@ -1,24 +1,5 @@
 /**index.wxss**/
 
-/* 搜索样式 */
-.search{
-  background:#002;
-  padding: 20rpx;
-}
-
-.search-input{
-  background:#fff;
-  height: 60rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius:5px;
-  color: #999;
-  font-size: 14px;
-  }
-  .search-input icon{
-    margin-right: 5px;
-  }
 
 /* 轮播图样式 */
 .swiper{
