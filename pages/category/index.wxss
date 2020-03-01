@@ -16,6 +16,7 @@
     height: 100%;
     background: #eee;
     overflow: auto;
+    flex-shrink: 0;/*避免左边被挤掉*/
 }
 
 .left .menu-item{
@@ -42,7 +43,42 @@
 }
 
 
+/* 右侧栏 */
+
+.right{
+  flex: 1;
+  overflow: auto;
+}
+
+.right-title{
+  text-align: center;
+  padding: 20rpx;
+  color:pink;
+}
+.right-title text{
+  color: #002;
+}
+.product-list{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;/*换行关键 */
+  padding: 0 20rpx;
+  box-sizing: border-box;
+
+}
+.product-list navigator{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 33.33%;
+  overflow: hidden;
+  font-size: 12px;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
 .product-list image{
-  width: 120rpx;
-  height: 120rpx;
+  width: 100%;
+  height: auto;
 }
