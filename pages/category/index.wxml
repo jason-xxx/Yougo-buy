@@ -7,11 +7,11 @@
     <!-- 左侧分类栏 -->
     <view class="left">
     <!-- 菜单子选项 -->
-      <block wx:for="{{50}}" wx:key="index">
+      <block wx:for="{{list}}" wx:key="index">
         <view class="menu-item {{suoyin === index? 'click' : ''}}" 
         bindtap="handleClick" 
         data-index="{{index}}">
-            喵喵喵
+            {{item.cat_name}}
         </view>
       </block>
     </view>
@@ -19,22 +19,24 @@
     <!-- 右侧详情栏 -->
     <view class="right">
     <!-- 子分类 -->
-      <view class="right-list"> 
+      <block wx:for="{{list[suoyin].children}}" wx:key="index">
+       <view class="right-list"> 
          <!-- 分类名称 -->
         <view class="right-title">
-           / <text>电视总类</text> / 
+           / <text>{{item.cat_name}}</text> / 
         </view>
          <!-- 品牌列表 -->
         <view class="product-list">
-        <block wx:for="{{50}}" wx:key="index">
+        <block wx:for="{{item.children}}" wx:key="index">
           <navigator url="">
-            <image src="https://wx3.sinaimg.cn/mw690/6ff374a1gy1gcdgqul6tej20u00u0who.jpg"
+            <image src="{{item.cat_icon}}"
             mode="widthFix"></image>
-            <view>克里斯蒂亚诺</view>
+            <view>{{item.cat_name}}</view>
           </navigator>
           </block>
         </view>
-      </view>
+       </view>
+      </block>
     </view>
   </view>
 </view>

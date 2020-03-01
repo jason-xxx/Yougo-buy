@@ -1,3 +1,5 @@
+import request from '../../utils/request.js'
+
 // pages/category/index.js
 Page({
 
@@ -7,6 +9,8 @@ Page({
   data: {
     //记录当前点击哪个分类
     suoyin:0,
+    //左侧总分类数组
+    list:[]
 
   },
 
@@ -14,6 +18,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+     request({
+        url:"/categories"
+     }).then(res=>{
+        console.log(res)
+        const{message}=res.data;
+        this.setData({
+           list:message
+        })
+     })
+
 
   },
 
