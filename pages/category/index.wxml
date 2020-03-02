@@ -30,7 +30,7 @@
         <block wx:for="{{item.children}}" wx:key="index">
           <navigator url="">
             <image src="{{item.cat_icon}}"
-            mode="widthFix"></image>
+            mode="aspectFill"></image>
             <view>{{item.cat_name}}</view>
           </navigator>
           </block>

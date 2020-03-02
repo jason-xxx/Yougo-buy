@@ -79,6 +79,6 @@
 }
 
 .product-list image{
-  width: 100%;
-  height: auto;
+  width: 120rpx;
+  height: 120rpx;
 }
