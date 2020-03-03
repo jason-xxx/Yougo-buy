@@ -1,0 +1,32 @@
+<view class="container">
+<!-- 搜索框 -->
+  <navigator url="">
+     <view class="search">
+      <view class="search-input">
+        <icon type="search" size="20">
+        </icon>
+      小米
+      </view>
+     </view>
+   </navigator>
+
+   <!-- tab栏部分 -->
+   <view class="list-tab">
+     <view wx:for="{{['综合','销量','价格']}}" wx:key="index" >
+     {{item}}
+     <text class="iconfont iconpaixu" wx-if="{{index===2}}"></text>
+     </view>
+   </view>
+   
+   <!-- 商品列表部分 -->
+   <view class="goods-list">
+     <image src="https://wx2.sinaimg.cn/mw690/6ff374a1gy1gcgtrvq1w0j20aw0gb19b.jpg"
+     mode="aspectFill" ></image>
+     <view class="goods-list-right">
+       <view class="right-title">克里斯蒂亚诺罗纳尔多同款发带克里斯蒂亚诺罗纳尔多同款发带克里斯蒂亚诺罗纳尔多同款发带</view>
+       <view class="price">
+        <text>￥</text> 999.00 
+       </view>
+     </view>
+     </view>
+   </view>
