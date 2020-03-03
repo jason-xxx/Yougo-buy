@@ -60,3 +60,11 @@
 .price text{
    font-size: 16px;
 }
+
+/* 底线提示样式 */
+.load-more{
+    padding: 20px;
+    font-size: 13px;
+    color:#999;
+    text-align: center;
+} 	

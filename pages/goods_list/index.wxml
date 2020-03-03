@@ -34,4 +34,10 @@
       </block>
      </view>
 
+      <!-- 拖动到底部的提示 -->
+    <view class="load-more">
+    <!-- hasMore保存在data -->
+      <text wx:if="{{hasMore}}">加载中</text>
+      <text wx:if="{{!hasMore}}">没有更多数据</text> 
+    </view>	
    </view>
