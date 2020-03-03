@@ -56,6 +56,13 @@ Page({
                // 合并原来的列表和新请求回来的商品列表，把后续请求的数据加进来
                goods: [...this.data.goods, ...goods]
             })
+            // 根据返回的message.total和商品列表中的数量对比判断是否是最后一页
+            if (this.data.goods.length >= message.total) {
+               this.setData({
+                  //是最后一页就显示“没有更多数据”
+                  hasMore: false
+               })
+            }
          })
       }, 1000)
    },
