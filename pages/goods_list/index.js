@@ -14,7 +14,9 @@ Page({
       //判定商品是否加载完毕显示的字样
       hasMore:true,
       // 页面
-      pagenum: 1
+      pagenum: 1,
+      // 判断是否正在加载中
+      loading: true
 
    },
 
@@ -58,7 +60,9 @@ Page({
             })
             this.setData({
                // 合并原来的列表和新请求回来的商品列表，把后续请求的数据加进来
-               goods: [...this.data.goods, ...goods]
+               goods: [...this.data.goods, ...goods],
+                // 当前这次请求完毕把加载页面设为false，不让页面上拉触底时候触发再次发请求
+               loading: false
             })
             // 根据返回的message.total和商品列表中的数量对比判断是否是最后一页
             if (this.data.goods.length >= message.total) {
@@ -72,13 +76,18 @@ Page({
    },
    // 页面上拉触底时候触发
    onReachBottom() {
-      // 页数加1
-      this.setData({
-         pagenum: this.data.pagenum + 1
-      });
+      //上一个请求完成再通过发请求
+     if(this.data.loading===false){
+        // 页数加1
+        this.setData({
+           //每次发请求前把loading改为true！！！！！！
+           loading:true,
+           pagenum: this.data.pagenum + 1
+        });
 
-      // 请求商品列表
-      this.getGoods();
+        // 请求商品列表
+        this.getGoods();
+     }
    }
    
 })
