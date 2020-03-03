@@ -34,6 +34,10 @@ Page({
    },
    // 封装函数
    getGoods(){
+      // 数据都显示完了，没更多数据，就不会再请求
+      if (this.data.hasMore == false) {
+         return;
+      }
       // 使用定时器模拟网络延迟（后续可删，调试用的）
       setTimeout(v => {
          //根据keyword等数据发起请求
@@ -46,7 +50,7 @@ Page({
             }
          }).then(res => {
             const { message } = res.data
-
+             console.log(res)
             //遍历修改goods的价格（保留价格两位小数点）
             const goods = message.goods.map(v => {
                v.goods_price = Number(v.goods_price).toFixed(2);
