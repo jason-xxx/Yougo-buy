@@ -10,7 +10,7 @@
      </view>
    </navigator> -->
 
-   <search keyword="{{keyword}}"/>
+   <search keyword="{{keyword}}" background="search" align="left"/>
 
    <!-- tab栏部分 -->
    <view class="list-tab">

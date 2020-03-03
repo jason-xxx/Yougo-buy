@@ -1,4 +1,4 @@
-.search{
+/* .search{
    background-color:#ccc;
    padding:20rpx;
 }
@@ -13,6 +13,10 @@
 }
 .search-input icon{
     margin-right: 5px;
+  } */
+
+  .search{
+      background-color:#ccc!important;
   }
 
   /* tab部分 */
@@ -68,3 +72,4 @@
     color:#999;
     text-align: center;
 } 	
+

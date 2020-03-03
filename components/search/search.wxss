@@ -18,3 +18,16 @@
   .search-input icon{
     margin-right: 5px;
   }
+
+/* 添加搜索框内文字位置可变样式 （通过jsde align:改变）*/
+.left{
+    justify-content: flex-start;
+}
+
+.center{
+    justify-content: center;
+}
+
+.right{
+    justify-content: flex-end;
+} 	
