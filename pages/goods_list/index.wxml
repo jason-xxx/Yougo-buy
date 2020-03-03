@@ -1,6 +1,6 @@
 <view class="container">
 <!-- 搜索框 -->
-  <navigator url="">
+  <!-- <navigator url="">
      <view class="search">
       <view class="search-input">
         <icon type="search" size="20">
@@ -8,7 +8,9 @@
       {{keyword}}
       </view>
      </view>
-   </navigator>
+   </navigator> -->
+
+   <search keyword="{{keyword}}"/>
 
    <!-- tab栏部分 -->
    <view class="list-tab">

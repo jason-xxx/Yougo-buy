@@ -4,7 +4,7 @@
  <view class="search-input">
  <icon type="search" size="20">
  </icon>
- 搜索
+   {{keyword}}
  </view>
  </view>
  </navigator>
