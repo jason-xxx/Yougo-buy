@@ -1,4 +1,5 @@
-// pages/goods_list/index.js
+import request from "../../utils/request.js"
+
 Page({
 
    /**
@@ -6,7 +7,10 @@ Page({
     */
    data: {
       // 分类页的keyword(关键字)
-      keyword:''
+      keyword:'',
+
+      //存放商品
+      goods:[]
 
    },
 
@@ -21,6 +25,28 @@ Page({
          keyword
       })
       // console.log(keyword)
-   }
 
+      //根据keyword等数据发起请求
+      request({
+         url: "/goods/search",
+         data:{
+            query:this.data.keyword,
+            pagenum:1,
+            pagesize:10
+         }
+      }).then(res=>{
+         const { message}=res.data
+         
+         //遍历修改goods的价格（保留价格两位小数点）
+         const goods=message.goods.map(v=>{
+            v.goods_price= Number(v.goods_price).toFixed(2);
+            return v
+         })
+         this.setData({
+            goods
+      })
+      })
+      
+   }
+   
 })

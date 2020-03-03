@@ -20,13 +20,18 @@
    
    <!-- 商品列表部分 -->
    <view class="goods-list">
-     <image src="https://wx2.sinaimg.cn/mw690/6ff374a1gy1gcgtrvq1w0j20aw0gb19b.jpg"
-     mode="aspectFill" ></image>
-     <view class="goods-list-right">
-       <view class="right-title">克里斯蒂亚诺罗纳尔多同款发带克里斯蒂亚诺罗纳尔多同款发带克里斯蒂亚诺罗纳尔多同款发带</view>
-       <view class="price">
-        <text>￥</text> 999.00 
+   <block wx:for="{{goods}}" wx:key="index">
+    <navigator url="" class="goods-item">
+      <image src="{{item.goods_small_logo}}"
+      mode="aspectFill" ></image>
+      <view class="goods-list-right">
+        <view class="right-title">{{item.goods_name}}</view>
+        <view class="price">
+         <text>￥</text> {{item.goods_price}}
+        </view>
        </view>
+       </navigator>
+      </block>
      </view>
-     </view>
+
    </view>
