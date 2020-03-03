@@ -3,11 +3,13 @@
 /* 如果同时设置了top和bottom，该元素的高度取两个的距离 ，起固定窗口作用*/
 .content{
   display: flex;
-  position: fixed;
-  top: 98rpx;
-  bottom: 0;
+  /* position: fixed; */
+  /* top: 98rpx; */
+  /* bottom: 0; */
   width: 750rpx;
   justify-content: space-between;
+ /* calc函数的文档：https://www.runoob.com/cssref/func-calc.html （修复苹果手机下拉bug）*/
+ height: calc(100vh - 100rpx);
 }
 
 /* 左边的菜单 */
@@ -15,7 +17,7 @@
     width: 200rpx;
     height: 100%;
     background: #eee;
-    overflow: auto;
+    /* overflow: auto; */
     flex-shrink: 0;/*避免左边被挤掉*/
 }
 
