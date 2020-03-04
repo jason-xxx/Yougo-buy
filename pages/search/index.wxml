@@ -7,9 +7,11 @@
       <icon type="search" size="20px"/>
       <!-- bindinput是监听用户输入的事件 文档=》组件=》input有 -->
       <!-- bindconfirm是按下回车键时候触发的事件  文档=》组件=》input里有-->
+      <!-- bindblur是失焦事件 文档=》组件=》input里有-->
       <input placeholder="请输入你想要搜索的商品"
       bindinput="handelInput" value="{{inputValue}}"
-      bindconfirm="handleEnter">
+      bindconfirm="handleEnter"
+      bindblur="handleBlur">
       </input>
      </view>
 

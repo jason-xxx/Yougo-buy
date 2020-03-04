@@ -96,6 +96,12 @@ Page({
       })
       return;
    },
+   // 输入框失去焦点时
+   handleBlur(){
+      this.setData({
+         recommend: []//清空数组不在下拉显示关键字搜索结果；
+      })
+   },
    //添加回车跳转到商品列表事件
    handleEnter(){
       //回车的时候把关键字存到本地存储 （wx.setStorageSync）在 文档=》API=》数据缓存
