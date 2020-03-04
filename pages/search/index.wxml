@@ -30,6 +30,8 @@
   </view>
 
   <view class="history-list">
-   <view class="history-item" wx:for="{{history}}" wx:key="index">{{item}}</view>
+   <navigator class="history-item" wx:for="{{history}}" wx:key="index"
+   url="/pages/goods_list/index?keyword={{item}}"
+   >{{item}}</navigator>
   </view>
 </view>
