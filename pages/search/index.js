@@ -12,14 +12,27 @@ Page({
       //设置一个开关座节流防抖的 “开关”
       loading:false,
       //设置一个最后一次输入框，输入的值
-      lastValue:""
+      lastValue:"",
+      //本地储存历史记录
+      history:[]
    },
 
    /**
     * 生命周期函数--监听页面加载
     */
    onLoad: function (options) {
-  
+     //获取本地数据
+     let arr =wx.getStorageSync("history",arr)
+     //判断本地有没有数据，如果没有或者不是数组，就将它定义为一个空数组
+     if (!Array.isArray(arr)) {
+        arr = [];
+     }
+
+     //将本地数据存到data，方便渲染
+     this.setData({
+        history:arr
+     })
+     
    },
    // 监听输入框的值
    handelInput(e){
@@ -85,6 +98,21 @@ Page({
    },
    //添加回车跳转到商品列表事件
    handleEnter(){
+      //回车的时候把关键字存到本地存储 （wx.setStorageSync）在 文档=》API=》数据缓存
+
+      //每次存储数组前先把本地的数据获取回来
+      let arr =wx.getStorageSync('history');
+
+      //判断本地有没有数据，如果没有或者不是数组，就将它定义为一个空数组
+      if(!Array.isArray(arr)){
+         arr=[];
+      }
+      //把新获取回来的数组 添加到数组第一位
+      arr.unshift(this.data.inputValue);
+
+      //回车的时候把关键字存到本地存储 
+      wx.setStorageSync('history',arr)
+
       //小程序的跳转页面方法（wx.redirectTo）在 文档=》API=》路由
       wx.redirectTo({//使用wx.redirectTo不用点击返回时多次返回到搜索页
          url: '/pages/goods_list/index?keyword='+this.data.inputValue,
