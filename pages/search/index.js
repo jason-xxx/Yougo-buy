@@ -1,18 +1,21 @@
-// pages/search/index.js
+import request from "../../utils/request.js"
+
 Page({
 
    /**
     * 页面的初始数据
     */
    data: {
-      inputValue:''
+      inputValue:'',
+      // 搜索建议
+      recommend:[]
    },
 
    /**
     * 生命周期函数--监听页面加载
     */
    onLoad: function (options) {
-
+  
    },
    // 监听输入框的值
    handelInput(e){
@@ -21,6 +24,37 @@ Page({
       this.setData({
          inputValue:value
       })
+      // 如果value有值才请求,否则不请求
+      if(!value){
+         //如果输入框为空就清空数组；
+         this.setData({
+            recommend:[]
+         })
+         return;
+      }
+         //  输入框变化时 发送请求获取相应关键字结果（搜索建议）
+         request({
+            url: '/goods/qsearch',
+            data: {
+               query: value
+            }
+         }).then(res => {
+            // console.log(res)
+            const {message}=res.data;
+            //保存搜索建议
+            this.setData({
+               recommend:message
+            })
+         })
+   },
+   //点击取消按钮的事件，
+   handleCancel(){
+      this.setData({
+         recommend: [],
+         //这里要在wxml到input添加value="{{inputValue}}"
+         inputValue: ''
+      })
+      return;
    }
 
 })

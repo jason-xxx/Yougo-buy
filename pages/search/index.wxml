@@ -7,11 +7,17 @@
       <icon type="search" size="20px"/>
       <!-- bindinput是监听用户输入的事件 文档=》组件=》input有 -->
       <input placeholder="请输入你想要搜索的商品"
-      bindinput="handelInput">
+      bindinput="handelInput" value="{{inputValue}}">
       </input>
      </view>
 
-     <view class="btn" wx:if="{{inputValue}}">取消</view>
+     <view class="btn" wx:if="{{inputValue}}" bindtap="handleCancel">取消</view>
+
+     <!-- 当搜索框有值时显示的搜索建议框 -->
+     <view class="recommend" wx:if="{{recommend.length}}"> 
+        <navigator url="" 
+        wx:for="{{recommend}}" wx:key="index">{{item.goods_name}}</navigator>
+     </view>
    </view>
   </view>
   

@@ -1,12 +1,41 @@
 /* 搜索框部分*/
-.search{
+.search-wrapper{
    padding: 20rpx;
+   background-color: #eee;
+}
+.search{
    display: flex;
    justify-content: space-between;
-   background-color: #eee;
    height: 60rpx;
+   position: relative
 }
 
+/* 搜索推荐框样式 */
+.recommend{
+   position: absolute;
+   left: 0rpx;
+   top: 60rpx;
+   background-color: #fff;
+   width: 100%;
+   padding: 20rpx 10rpx;
+   box-sizing:border-box;
+   padding-right:200rpx;
+   border: 1px #eee solid;
+   height: 50vh;
+   overflow: auto;
+}
+
+.recommend navigator{
+   /*前4行溢出隐藏*/
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 1;
+   overflow: hidden;
+   border-bottom: 1px #eee solid;
+   line-height: 60rpx;
+   font-size: 14px;
+   height: 60rpx;
+}
 .search-input{
    display: flex;
    background-color: #fff;
