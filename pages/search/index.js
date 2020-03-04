@@ -82,6 +82,13 @@ Page({
          inputValue: ''
       })
       return;
+   },
+   //添加回车跳转到商品列表事件
+   handleEnter(){
+      //小程序的跳转页面方法（wx.navigateTo）在 文档=》API=》路由
+      wx.navigateTo({
+         url: '/pages/goods_list/index?keyword='+this.data.inputValue,
+      })
    }
 
 })
