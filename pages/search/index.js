@@ -33,19 +33,24 @@ Page({
          return;
       }
          //  输入框变化时 发送请求获取相应关键字结果（搜索建议）
-         request({
-            url: '/goods/qsearch',
-            data: {
-               query: value
-            }
-         }).then(res => {
-            // console.log(res)
-            const {message}=res.data;
-            //保存搜索建议
-            this.setData({
-               recommend:message
-            })
+         this.getRecommend();
+   },
+
+   //将上面的获取搜索建议请求封装起来
+   getRecommend(){
+      request({
+         url: '/goods/qsearch',
+         data: {
+            query: this.data.inputValue//封装后这个要改
+         }
+      }).then(res => {
+         // console.log(res)
+         const { message } = res.data;
+         //保存搜索建议
+         this.setData({
+            recommend: message
          })
+      })
    },
    //点击取消按钮的事件，
    handleCancel(){
