@@ -10,7 +10,9 @@ Page({
       // 搜索建议
       recommend:[],
       //设置一个开关座节流防抖的 “开关”
-      loading:false
+      loading:false,
+      //设置一个最后一次输入框，输入的值
+      lastValue:""
    },
 
    /**
@@ -46,7 +48,9 @@ Page({
 
         //通过loading=false进来后，就把loading开关改为true
         this.setData({
-           loading:true
+           loading:true,
+           //记录当前输入框的值
+           lastValue:this.data.inputValue
         })
 
          request({
@@ -63,6 +67,10 @@ Page({
                //请求完成后将开关重新改为false,从而做到节流防抖作用
                loading:false
             })
+            //到最后判断lastValue值是不是最新，如果不是就重新调用函数，再次发起请求
+            if(this.data.lastValue!==this.data.inputValue){
+                this.getRecommend();
+            }
          })
       }
    },
