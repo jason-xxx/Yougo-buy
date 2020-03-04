@@ -102,6 +102,15 @@ Page({
          recommend: []//清空数组不在下拉显示关键字搜索结果；
       })
    },
+   //点击历史搜索的x按钮时触发
+   handleClear(){
+      //清空data中历史记录的数据
+      this.setData({
+         history:[]
+      })
+      //清空本地的历史记录
+      wx.setStorageSync('history',[])
+   },
    //添加回车跳转到商品列表事件
    handleEnter(){
       //回车的时候把关键字存到本地存储 （wx.setStorageSync）在 文档=》API=》数据缓存

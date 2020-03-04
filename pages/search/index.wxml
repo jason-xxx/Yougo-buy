@@ -28,7 +28,8 @@
   <!-- 历史搜索 -->
   <view class="history">
     <view class="history-font">历史搜索</view>
-    <icon type="clear" size="20px"></icon>
+    <icon type="clear" size="20px"
+    bindtap="handleClear"></icon>
   </view>
 
   <view class="history-list">
