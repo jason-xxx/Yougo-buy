@@ -5,11 +5,13 @@
    <view class="search">
      <view class="search-input">
       <icon type="search" size="20px"/>
-      <input placeholder="请输入你想要搜索的商品">
+      <!-- bindinput是监听用户输入的事件 文档=》组件=》input有 -->
+      <input placeholder="请输入你想要搜索的商品"
+      bindinput="handelInput">
       </input>
      </view>
 
-     <view class="btn">取消</view>
+     <view class="btn" wx:if="{{inputValue}}">取消</view>
    </view>
   </view>
   
