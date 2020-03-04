@@ -15,10 +15,10 @@ Component({
         value: "center" // left，center，right
      }
   },
-  
+
    // 外部扩展的样式,声明了可以接收background这个样式
    // align输入框的文字居中还是左对齐
-   externalClasses: ['background', "align"],
+   externalClasses: ['background'],//删掉align，因为用上面的方法了，之前忘记删了，问题不大
   /**
    * 组件的初始数据
    */

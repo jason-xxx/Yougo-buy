@@ -1,0 +1,28 @@
+
+<view class="container">
+  <view class="search-wrapper">
+    <!-- 搜索框 -->
+   <view class="search">
+     <view class="search-input">
+      <icon type="search" size="20px"/>
+      <input placeholder="请输入你想要搜索的商品">
+      </input>
+     </view>
+
+     <view class="btn">取消</view>
+   </view>
+  </view>
+  
+  <!-- 历史搜索 -->
+  <view class="history">
+    <view class="history-font">历史搜索</view>
+    <icon type="clear" size="20px"></icon>
+  </view>
+
+  <view class="history-list">
+   <view class="history-item">口罩</view>
+   <view class="history-item">n95医用口罩</view>
+   <view class="history-item">苹果手机</view>
+   <view class="history-item">克里斯蒂亚诺球衣</view>
+  </view>
+</view>

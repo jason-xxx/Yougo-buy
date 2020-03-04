@@ -89,6 +89,12 @@
 					"pathName": "pages/category/index",
 					"query": "keyword=曲面电视",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search/index",
+					"pathName": "pages/search/index",
+					"scene": null
 				}
 			]
 		}
