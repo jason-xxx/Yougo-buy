@@ -110,6 +110,9 @@ Page({
       //把新获取回来的数组 添加到数组第一位
       arr.unshift(this.data.inputValue);
 
+      //数组去重，避免两个相同的搜索记录显示出来，新的添加到最前面就行
+      arr=[...new Set(arr)]
+
       //回车的时候把关键字存到本地存储 
       wx.setStorageSync('history',arr)
 
