@@ -67,6 +67,12 @@
 
     <!-- 页脚的按钮，固定在底部 -->
     <view class="btns">
+
+      <!-- 联系客服的按钮 button直接覆盖假的联系客服按钮，然后做透明处理-->
+        <view class="contact">
+            <button open-type="contact">这里看不到的，因为css做了透明处理</button>
+        </view>
+
         <view class="btn-white">
             <view class="iconfont icon-kefu"></view>
             <text>联系客服</text>

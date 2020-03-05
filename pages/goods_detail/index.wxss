@@ -95,6 +95,22 @@
     background: red;
 }
 
+/* 真正的联系客服按钮，官方文档提供 */
+.contact{
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    left:0; 
+    top:0;
+    overflow: auto;
+    opacity: 0;/*透明处理*/
+}
+
+.contact button{
+    height: 100rpx;
+}
+
+
 
 .tab{
     display: flex;
