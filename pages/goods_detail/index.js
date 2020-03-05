@@ -6,12 +6,6 @@ Page({
     * 页面的初始数据
     */
    data: {
-       //轮播图数据
-      banners: [
-         " https://wx4.sinaimg.cn/mw690/79a4bd8bgy1gcj7wbvq51j21hc0quqm9.jpg",
-        " https://wx2.sinaimg.cn/mw690/79a4bd8bgy1gcj7wbpfxnj20xc0lbqem.jpg",
-        "https://wx4.sinaimg.cn/mw690/79a4bd8bgy1gcj7wbqcmsj20xc0il12f.jpg"
-         ],
       // 商品的详情
       detail: {},
       // 记录tab当前的索引
@@ -58,11 +52,15 @@ Page({
       })
    },
 
-   // 预览图片
-   handlePreview() {
-      wx.previewImage({
-         //current: '', // 当前显示图片的http链接
-         urls: this.data.picUrls // 需要预览的图片http链接列表
-      })
-   }
+   // 轮播图图片预览
+    handlePreview(e) {
+      // 获取当前点击的图片的索引值(实现点击指定图片进行预览)
+      const { index } = e.currentTarget.dataset;
+
+      // (文档 =》api => 媒体 =》图片)
+       wx.previewImage({
+          current: this.data.picUrls[index], // 当前显示图片的http链接
+          urls: this.data.picUrls // 需要预览的图片http链接列表
+       })
+    }
 })
