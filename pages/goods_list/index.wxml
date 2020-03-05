@@ -23,7 +23,7 @@
    <!-- 商品列表部分 -->
    <view class="goods-list">
    <block wx:for="{{goods}}" wx:key="index">
-    <navigator url="" class="goods-item">
+    <navigator url="/pages/goods_detail/index?id={{item.goods_id}}" class="goods-item">
       <image src="{{item.goods_small_logo}}"
       mode="aspectFill" ></image>
       <view class="goods-list-right">
