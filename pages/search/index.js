@@ -42,7 +42,7 @@ Page({
          inputValue:value
       })
       // 如果value有值才请求,否则不请求
-      if(!value){
+      if (!value.trim()){
          //如果输入框为空就清空数组；
          this.setData({
             recommend:[]
