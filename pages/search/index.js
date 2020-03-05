@@ -97,11 +97,11 @@ Page({
       return;
    },
    // 输入框失去焦点时
-   handleBlur(){
-      this.setData({
-         recommend: []//清空数组不在下拉显示关键字搜索结果；
-      })
-   },
+   // handleBlur(){
+   //    this.setData({
+   //       recommend: []//清空数组不在下拉显示关键字搜索结果；
+   //    })
+   // },
    //点击历史搜索的x按钮时触发
    handleClear(){
       //清空data中历史记录的数据
@@ -135,6 +135,19 @@ Page({
       wx.redirectTo({//使用wx.redirectTo不用点击返回时多次返回到搜索页
          url: '/pages/goods_list/index?keyword='+this.data.inputValue,
       })
+   },
+
+   // 点击页面时候判断是否展示搜索框的下拉列表,
+   handleShowList(e) {
+      // e.target是当然点击的元素
+      const { onlyid } = e.target.dataset;
+
+      // 如果点击的地方onlyid不存在，说明点击并不是下拉列表,就清空recommend
+      if (!onlyid) {
+         this.setData({
+            recommend: []
+         })
+      }
    }
 
 })

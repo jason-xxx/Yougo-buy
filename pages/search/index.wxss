@@ -1,4 +1,7 @@
 /* 搜索框部分*/
+.container{
+    min-height: 100vh;
+} 	
 .search-wrapper{
    padding: 20rpx;
    background-color: #eee;
@@ -17,9 +20,8 @@
    top: 60rpx;
    background-color: #fff;
    width: 100%;
-   padding: 20rpx 10rpx;
+   padding: 20rpx 150rpx 10rpx 50rpx;
    box-sizing:border-box;
-   padding-right:200rpx;
    border: 1px #eee solid;
    height: 50vh;
    overflow: auto;
@@ -32,9 +34,9 @@
    -webkit-line-clamp: 1;
    overflow: hidden;
    border-bottom: 1px #eee solid;
-   line-height: 60rpx;
+   line-height: 80rpx;
    font-size: 14px;
-   height: 60rpx;
+   height: 80rpx;
 }
 .search-input{
    display: flex;
