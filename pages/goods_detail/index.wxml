@@ -77,12 +77,12 @@
             <view class="iconfont icon-kefu"></view>
             <text>联系客服</text>
         </view>
-        <view class="btn-white">
+        <view class="btn-white" bindtap="handleToCart">
             <view class="iconfont icon-gouwuche"></view>
             <text>购物车</text>
         </view>
 
-        <view class="btn-color">加入购物车</view>
+        <view class="btn-color" bindtap="handleToCart">加入购物车</view>
         <view class="btn-color">立即购买</view>
     </view>
  
