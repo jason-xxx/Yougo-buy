@@ -74,7 +74,7 @@ Page({
      const{index,number}=e.currentTarget.dataset;
     
 
-     //判断如果数量为0的时候，是否删除商品
+     //如果当前商品数为1，并且点击的是number===-1的“-”就弹窗确认取消框，确认就删除，取消就保留原来
      if(this.data.goods[index].number===1&&number===-1){
         //引入官方文档弹窗。API=》界面=》交互=》第二个
         wx.showModal({
@@ -92,8 +92,8 @@ Page({
               }
            }
         })
-     }else{
-        //点“-”number为-1，“+”number为1
+     } else {//else的意思就是要不数不为1，或点击的是number===1的“+”，就进行以下的计算
+        //点“-”number为-1，“+”number为1（number是一开始从wxml传参结构过来的）
         this.data.goods[index].number += number;
      }
      //重新修改data的goods值
