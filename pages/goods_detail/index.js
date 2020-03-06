@@ -84,7 +84,7 @@ Page({
             v.number += 1;
             //弹出提示框，文档=>界面=》界面=》交互=》第一个
             wx.showToast({
-               title: '数量+1',
+               title: '添加成功',
                icon: "success"
             })
          }
@@ -98,6 +98,10 @@ Page({
             goods_price: this.data.detail.goods_price,
             goods_small_logo: this.data.detail.goods_small_logo,
             number: 1
+         })
+         wx.showToast({
+            title: '添加成功',
+            icon: "success"
          })
       }
       //将goods保存到本地

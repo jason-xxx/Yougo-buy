@@ -6,7 +6,9 @@ Page({
    */
   data: {
       //收获地址
-      address:{}
+      address:{},
+      //从商品详情页存本地的商品
+      goods:[]
   },
 
   /**
@@ -19,6 +21,12 @@ Page({
         address: wx.setStorageSync("address")||{}
      })
 
+  },
+  onShow(){
+         //因为onload只执行一次，所有需要用onShow每次打开页面都执行获取本地数据
+         this.setData({
+            goods:wx.getStorageSync("goods")||[]
+         })
   },
   handleGetAddress(){
      //获取收获地址的文档=》API=》开发接口=》收获地址
