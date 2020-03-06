@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      //收获地址
+      address:{}
   },
 
   /**
@@ -13,5 +14,23 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  handleGetAddress(){
+     //获取收获地址的文档=》API=》开发接口=》收获地址
+     wx.chooseAddress({
+        success:(res)=>{
+           //把收获地址保存到data
+           this.setData({
+              address:{
+                 //收获人：
+                 name:res.userName,
+                 //手机号码
+                 tel:res.telNumber,
+                 //详情地址
+                 detail:res.provinceName+res.cityName+res.countyName+res.detailInfo
+              }
+           })
+        }
+     })
   }
 })
