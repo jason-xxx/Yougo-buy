@@ -66,5 +66,18 @@ Page({
      this.setData({
         allPrice:price
      })
+  },
+
+//   点击+、-图标的变化
+  handleCalc(e){
+     //结构索引和nuber
+     const{index,number}=e.currentTarget.dataset;
+     //点“-”number为-1，“+”number为1
+     this.data.goods[index].number+=number;
+
+     //重新修改data的goods值
+     this.setData({
+        goods:this.data.goods
+     })
   }
 })

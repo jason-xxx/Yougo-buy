@@ -49,9 +49,17 @@
                     </view>
                     <!-- 商品的数量 -->
                     <view class="goods-number">
-                        <view class="calc-button">-</view>
+                    <!-- data-number="{{-1}}"是传过去的参数 -->
+                    <!-- data-index="{{index}}"是传过去的当前索引 -->
+                        <view class="calc-button" 
+                        bindtap="handleCalc"
+                        data-number="{{-1}}"
+                        data-index="{{index}}">-</view>
                         <input value="{{item.number}}"></input>
-                        <view class="calc-button">+</view>
+                        <view class="calc-button"
+                         bindtap="handleCalc"
+                         data-number="{{1}}"
+                         data-index="{{index}}">+</view>
                     </view>
                 </view>
             </view>
