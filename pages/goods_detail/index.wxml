@@ -83,7 +83,7 @@
         </view>
 
         <view class="btn-color" bindtap="handleAddCart">加入购物车</view>
-        <view class="btn-color" bindtap="handleAddCart">立即购买</view>
+        <view class="btn-color" bindtap="handleBuy">立即购买</view>
     </view>
  
 

@@ -70,7 +70,7 @@ Page({
          url: '/pages/cart/index',
       })
    },
-   //点击加入购物车按钮
+   //点击加入购物车按钮------------------------
    handleAddCart() {
       //保存到本地，先判断本地是否有整个大数组，如果没有就创立一个空数组
       const goods = wx.getStorageSync('goods') || []
@@ -102,5 +102,15 @@ Page({
       }
       //将goods保存到本地
       wx.setStorageSync("goods", goods)
+   },
+   //点击立即购买跳转-----------------------------------------------
+   handleBuy(){
+      //调用handleAddCart整个方法
+      this.handleAddCart();
+
+      //存好数据跳转到购物车
+      wx.switchTab({
+         url: '/pages/cart/index',
+      })
    }
 })
