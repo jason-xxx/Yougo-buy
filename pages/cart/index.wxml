@@ -35,8 +35,9 @@
         <!-- 商品的单项, 需要循环的 -->
         <view class="goods-item" wx:for="{{goods}}" wx:key="index">
             <icon type="success" color="red"></icon>
+            <navigator url="/pages/goods_detail/index?id={{item.goods_id}}">
             <image mode="aspectFill" src="{{item.goods_small_logo}}"></image>
-
+            </navigator>
             <!-- 商品信息右侧 -->
             <view class="goods-item-right">
                 <view class="goods-title">
@@ -44,7 +45,7 @@
                 </view>
                 <view class="goods-info">
                     <view class="goods-price">
-                        <text>￥</text>{{item.good_price}}
+                        <text>￥</text>{{item.goods_price}}
                     </view>
                     <!-- 商品的数量 -->
                     <view class="goods-number">
