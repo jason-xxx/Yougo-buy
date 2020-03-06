@@ -72,11 +72,10 @@ Page({
   handleCalc(e){
      //结构索引和nuber
      const{index,number}=e.currentTarget.dataset;
-     //点“-”number为-1，“+”number为1
-     this.data.goods[index].number+=number;
+    
 
      //判断如果数量为0的时候，是否删除商品
-     if(this.data.goods[index].number===0){
+     if(this.data.goods[index].number===1&&number===-1){
         //引入官方文档弹窗。API=》界面=》交互=》第二个
         wx.showModal({
            title: '提示',
@@ -93,6 +92,9 @@ Page({
               }
            }
         })
+     }else{
+        //点“-”number为-1，“+”number为1
+        this.data.goods[index].number += number;
      }
      //重新修改data的goods值
      this.setData({
