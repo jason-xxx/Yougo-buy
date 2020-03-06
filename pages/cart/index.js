@@ -75,6 +75,25 @@ Page({
      //点“-”number为-1，“+”number为1
      this.data.goods[index].number+=number;
 
+     //判断如果数量为0的时候，是否删除商品
+     if(this.data.goods[index].number===0){
+        //引入官方文档弹窗。API=》界面=》交互=》第二个
+        wx.showModal({
+           title: '提示',
+           content: '是否删除商品',
+           success:(res)=>{
+              //确认删除
+              if(res.confirm){
+                 //使用splice方法删数组里的成员(index:索引,1：删一个)
+                 this.data.goods.splice(index,1)
+                 //重新修改data
+                 this.setData({
+                    goods:this.data.goods
+                 })
+              }
+           }
+        })
+     }
      //重新修改data的goods值
      this.setData({
         goods:this.data.goods
