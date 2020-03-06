@@ -13,6 +13,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+     //获取本地的收货地址
+     this.setData({
+         //如果本地没有addres就等于一个空对象
+        address: wx.setStorageSync("address")||{}
+     })
 
   },
   handleGetAddress(){
@@ -30,6 +35,9 @@ Page({
                  detail:res.provinceName+res.cityName+res.countyName+res.detailInfo
               }
            })
+
+           //保存到本地
+           wx.setStorageSync("address",this.data.address);
         }
      })
   }
