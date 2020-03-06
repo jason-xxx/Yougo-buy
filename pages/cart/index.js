@@ -60,12 +60,14 @@ Page({
      //循环遍历商品价格(forEach中的v指的是数组里的对象)
      this.data.goods.forEach(v=>{
         //将遍历出来的价格全部相加
-         price+=v.goods_price;
+         price+=v.goods_price*v.number
      })
      //修改总价格
      this.setData({
         allPrice:price
      })
+     // 修改本地的数据
+     wx.setStorageSync("goods", this.data.goods)
   },
 
 //   点击+、-图标的变化
@@ -89,6 +91,8 @@ Page({
                  this.setData({
                     goods:this.data.goods
                  })
+                 //调用总价格
+                 this.handleAllPrice();
               }
            }
         })
@@ -100,5 +104,8 @@ Page({
      this.setData({
         goods:this.data.goods
      })
+
+     //调用总价格
+     this.handleAllPrice();
   }
 })
