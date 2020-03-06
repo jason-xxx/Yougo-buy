@@ -8,7 +8,9 @@ Page({
       //收获地址
       address:{},
       //从商品详情页存本地的商品
-      goods:[]
+      goods:[],
+     // 总价格
+     allPrice: 0
   },
 
   /**
@@ -25,8 +27,11 @@ Page({
   onShow(){
          //因为onload只执行一次，所有需要用onShow每次打开页面都执行获取本地数据
          this.setData({
-            goods:wx.getStorageSync("goods")||[]
+            goods:wx.getStorageSync("goods")||[],
          })
+         //计算总价格
+         //因为每次在进入购物车页面都要计算，使用将总价格计算方法在onShow调用
+         this.handleAllPrice();
   },
   handleGetAddress(){
      //获取收获地址的文档=》API=》开发接口=》收获地址
@@ -47,6 +52,19 @@ Page({
            //保存到本地
            wx.setStorageSync("address",this.data.address);
         }
+     })
+  },
+  //计算总价格------------------------
+  handleAllPrice(){
+     let price=0;
+     //循环遍历商品价格(forEach中的v指的是数组里的对象)
+     this.data.goods.forEach(v=>{
+        //将遍历出来的价格全部相加
+         price+=v.goods_price;
+     })
+     //修改总价格
+     this.setData({
+        allPrice:price
      })
   }
 })

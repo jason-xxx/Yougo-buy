@@ -68,7 +68,7 @@
         <view class="allprice">
             <view class="allprice-top">合计
                 <text>
-                    <text>￥</text>151221
+                    <text>￥</text>{{allPrice}}
                 </text>
             </view>
             <view class="allprice-btm">包含运费</view>
