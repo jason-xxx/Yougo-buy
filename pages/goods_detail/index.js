@@ -97,7 +97,8 @@ Page({
             goods_name: this.data.detail.goods_name,
             goods_price: this.data.detail.goods_price,
             goods_small_logo: this.data.detail.goods_small_logo,
-            number: 1
+            number: 1,
+            select:true//存一个在购物车勾选商品的选择，刚加入购物车里的商品默认勾选
          })
          wx.showToast({
             title: '添加成功',

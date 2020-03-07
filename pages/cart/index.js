@@ -59,8 +59,10 @@ Page({
      let price=0;
      //循环遍历商品价格(forEach中的v指的是数组里的对象)
      this.data.goods.forEach(v=>{
-        //将遍历出来的价格全部相加
-         price+=v.goods_price*v.number
+       if(v.select){
+          //将遍历出来的价格全部相加
+          price += v.goods_price * v.number
+       }
      })
      //修改总价格
      this.setData({
@@ -108,6 +110,7 @@ Page({
      //调用总价格
      this.handleAllPrice();
   },
+//   输入框失焦时触发
   handleBlur(e){
      //结构当先的商品的index
      const {index}=e.currentTarget.dataset;
@@ -129,5 +132,23 @@ Page({
 
      //调用计算总价格方法
      this.handleAllPrice();
-  }
+  },
+  //改变勾选状态时触发
+   handleSelect(e){
+      //结构当先的商品的index
+      const { index } = e.currentTarget.dataset;
+      //重本地结构当前的select
+      const {select}=this.data.goods[index];
+
+      //每点击一次就取反
+      this.data.goods[index].select=!select
+
+      //修改data中的goods
+      this.setData({
+         goods:this.data.goods
+      })
+      
+      //计算总价格
+      this.handleAllPrice();
+   }
 })
