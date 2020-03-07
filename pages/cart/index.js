@@ -169,5 +169,25 @@ Page({
              //需要将取反的返回值再取反才能拿到我们想要的全选规则
              allSelect: !suibian
           })   
+   },
+   //点击全选按钮的函数
+   handleTabAllselect(){
+      //拿到当前的全选状态
+      const {allSelect}=this.data
+
+      //循环每个商品的状态
+      this.data.goods.forEach(v=>{
+         //!allSelect相当于一点击全选就把当前状态取反，这里就是让每个单选等于全选状态
+         v.select=!allSelect
+      })
+      this.setData({
+         //这里说明一点击全选，当前状态就取反,并保存到data
+         allSelect:!allSelect,
+         //重新修改goods
+         goods:this.data.goods
+      })
+
+      //计算总价格
+      this.handleAllPrice();
    }
 })
