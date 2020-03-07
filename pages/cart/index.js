@@ -107,5 +107,27 @@ Page({
 
      //调用总价格
      this.handleAllPrice();
+  },
+  handleBlur(e){
+     //结构当先的商品的index
+     const {index}=e.currentTarget.dataset;
+     //结构v是输入框的值value
+     let {value}=e.detail;
+     //将输入框内容转换为数字
+     value=Math.floor(Number(value))
+     //不能让value小于1，小于1就等于1
+     if(value<1){
+        value=1;
+     }
+
+     //修改商品数量
+     this.data.goods[index].number=value;
+     //修改data中的goods
+     this.setData({
+        goods:this.data.goods
+     })
+
+     //调用计算总价格方法
+     this.handleAllPrice();
   }
 })
