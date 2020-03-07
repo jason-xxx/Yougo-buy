@@ -10,7 +10,9 @@ Page({
       //从商品详情页存本地的商品
       goods:[],
      // 总价格
-     allPrice: 0
+     allPrice: 0,
+     //全选
+     allSelect:true
   },
 
   /**
@@ -32,6 +34,8 @@ Page({
          //计算总价格
          //因为每次在进入购物车页面都要计算，使用将总价格计算方法在onShow调用
          this.handleAllPrice();
+         // 每次在进入购物车页面就判断全选的状态
+         this.handleAllSelect();
   },
   handleGetAddress(){
      //获取收获地址的文档=》API=》开发接口=》收获地址
@@ -150,5 +154,20 @@ Page({
       
       //计算总价格
       this.handleAllPrice();
+      this.handleAllSelect();
+      // console.log(this.data.allSelect)
+   },
+   //判断是否全选
+   handleAllSelect(){
+      //使用some方法返回的是布尔值，因为some方法遍历出来的v.select有一个为true返回就为true
+      let suibian =this.data.goods.some(v => {
+         //所有这里将取反，就变成有1个false就返回true，没有就返回false
+         return !v.select 
+          })
+         
+          this.setData({
+             //需要将取反的返回值再取反才能拿到我们想要的全选规则
+             allSelect: !suibian
+          })   
    }
 })
